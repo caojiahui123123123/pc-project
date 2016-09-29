@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+@import "reset";
+
+//这是scss文件专属注释
+/*这是变量定义，变量以$开头，变量名和变量值用 : 分隔*/
+/*!
+	强注释
+*/
+$fontColor: #666;
+$fontSize: 14px;
+
+body {
+	$fontFamily: 'Microsoft Yahei' !global;
+	color: $fontColor;
+	font-size: $fontSize;
+}
+
+div {
+	font-family: $fontFamily;
+}
+
+$top: top;
+p {
+	border-#{$top}: 1px solid #666;
+}
+
+.nav {
+	width: 1200px;
+
+	ul {
+		height: 30px;
+
+		li {
+			float: left;
+
+			padding: 10px 0 0 20px;
+
+			padding: {
+				left: 20px;
+				top: 10px;
+			}
+
+			&:hover {
+				color: $fontColor;
+			}
+		}
+	}
+}
+
+/*box-shadow: 0 0 10px #333*/
+@mixin box-shadow($x:0,$y:0,$expand:5px,$color:#c33){
+	box-shadow: $x $y $expand $color;
+	-webkit-box-shadow: $x $y $expand $color;
+	-moz-box-shadow: $x $y $expand $color;
+	-ms-box-shadow: $x $y $expand $color;
+}
+.box-shadow {
+	width: 100px;
+	height: 100px;
+	margin: {
+		top: 100px;
+		left: 100px;
+	};
+	background-color: #888;
+	@include box-shadow;
+	position: relative;
+
+	.close {
+		@extend .circle;
+		top: -5px;
+		right: -5px;
+	}
+}
+
+/* @extend 继承 */
+.circle {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	background-color: #666;
+}
+
+/* 获取left */
+$space: 10px;
+$width: 100px;
+@function getLeft($i){
+	@return $i * ($space + $width);
+}
+
+@for $i from 1 through 5 {
+	.li-#{$i} {
+		left: getLeft($i);
+	}
+}

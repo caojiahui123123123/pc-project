@@ -1,0 +1,93 @@
+@charset "UTF-8";
+html,
+body,
+ul, li,
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/*这是变量定义，变量以$开头，变量名和变量值用 : 分隔*/
+/*!
+	强注释
+*/
+body {
+  color: #666;
+  font-size: 14px;
+}
+
+div {
+  font-family: "Microsoft Yahei";
+}
+
+p {
+  border-top: 1px solid #666;
+}
+
+.nav {
+  width: 1200px;
+}
+.nav ul {
+  height: 30px;
+}
+.nav ul li {
+  float: left;
+  padding: 10px 0 0 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.nav ul li:hover {
+  color: #666;
+}
+
+/*box-shadow: 0 0 10px #333*/
+.box-shadow {
+  width: 100px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 100px;
+  background-color: #888;
+  box-shadow: 0 0 5px #c33;
+  -webkit-box-shadow: 0 0 5px #c33;
+  -moz-box-shadow: 0 0 5px #c33;
+  -ms-box-shadow: 0 0 5px #c33;
+  position: relative;
+}
+.box-shadow .close {
+  top: -5px;
+  right: -5px;
+}
+
+/* @extend 继承 */
+.circle, .box-shadow .close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background-color: #666;
+}
+
+/* 获取left */
+.li-1 {
+  left: 110px;
+}
+
+.li-2 {
+  left: 220px;
+}
+
+.li-3 {
+  left: 330px;
+}
+
+.li-4 {
+  left: 440px;
+}
+
+.li-5 {
+  left: 550px;
+}
+
+/*# sourceMappingURL=index.css.map */
